@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="SupportBase" uuid="F4EBCF1AB67B0F4FBC727B3566F0ED79" collation_locale="en-gb">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="client" uuid="11E711B66203EE4CB281BE33F8295020" id="1" prevent_journaling="true">
+		<field name="id" uuid="4E2FEED7D9AEA0499EF9B59A1466BB3F" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="name" uuid="2CB506AFB7B4A940ADAB40441BA4523A" type="10" limiting_length="255" id="2"/>
+		<field name="code" uuid="ECD95D4B90A00442BE1B763F523DAC36" type="10" limiting_length="255" id="3"/>
+		<field name="address" uuid="6441F7D5A704384AB97433F6EAAD79E9" type="21" blob_switch_size="2147483647" id="4"/>
+		<field name="detail" uuid="B0E6EBDDFBC36546865625C94193D633" type="21" blob_switch_size="2147483647" id="5"/>
+		<primary_key field_name="id" field_uuid="4E2FEED7D9AEA0499EF9B59A1466BB3F"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="7">
+				<color red="237" green="211" blue="181" alpha="255"/>
+				<coordinates left="18" top="46" width="163" height="190.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="ticket" uuid="C0B2CDE8D5C213419EFC043373F23438" id="2" prevent_journaling="true">
+		<field name="id" uuid="26A1561FCD1A244EB3AFB5C723DDC23A" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="fk_contact" uuid="BD405616FE931042BD585CB877BD60B3" type="10" store_as_UUID="true" id="3">
+			<field_extra position="3"/>
+		</field>
+		<field name="fk_user_technician" uuid="2F41B7F32B3A494AA1B4ABF14A880272" type="10" store_as_UUID="true" id="4">
+			<field_extra position="4" multi_line="false"/>
+		</field>
+		<field name="fk_user_company" uuid="5DA138D8D0118E4AADAE840D774F4BF1" type="10" store_as_UUID="true" id="5">
+			<field_extra position="5"/>
+		</field>
+		<field name="title" uuid="0857AC66A02F414FA3BFAD372B168887" type="10" limiting_length="255" id="6">
+			<field_extra position="6"/>
+		</field>
+		<field name="state" uuid="722F2F21A96EA349B756CCDDBF821171" type="10" limiting_length="255" id="7">
+			<field_extra position="7"/>
+		</field>
+		<field name="priority" uuid="FEBAF0F50D0FCA4AAF2BAB42D6BF096D" type="10" limiting_length="255" id="8">
+			<field_extra position="8"/>
+		</field>
+		<field name="queue" uuid="FD57B86896F4D943ABCFE3F99720DC3C" type="10" limiting_length="255" id="9">
+			<field_extra position="9"/>
+		</field>
+		<field name="createdTS" uuid="37BB9B3F101F55468048159E3774C576" type="10" limiting_length="255" id="10">
+			<field_extra position="10"/>
+		</field>
+		<field name="closedTS" uuid="87A7B6D125351647BC84D6E0D70C07BA" type="10" limiting_length="255" id="11">
+			<field_extra position="11"/>
+		</field>
+		<field name="lastUpdateTS" uuid="244398DDD9F7A84F96D58F1BBEF0B342" type="10" limiting_length="255" id="12">
+			<field_extra position="12"/>
+		</field>
+		<field name="detail" uuid="FB3828058E9642409BFFFBE46424535C" type="21" blob_switch_size="2147483647" id="13">
+			<field_extra position="14"/>
+		</field>
+		<field name="closingStatement" uuid="8F3C69CAA339404680C5722C892D01F2" type="10" id="14">
+			<field_extra position="13"/>
+		</field>
+		<primary_key field_name="id" field_uuid="26A1561FCD1A244EB3AFB5C723DDC23A"/>
+		<table_extra>
+			<editor_table_info fields_ordering="2" displayable_fields_count="16">
+				<color red="181" green="145" blue="209" alpha="255"/>
+				<coordinates left="1131" top="41" width="207" height="378.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="ticketMessage" uuid="2CF85C781468D34F8DFD192591D83103" id="3" prevent_journaling="true">
+		<field name="id" uuid="9872EBD8C72CB4478B142D5A2D65F040" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="fk_ticket" uuid="E02CF1F24961CA4B8BBFC27D350F38E2" type="10" store_as_UUID="true" id="2"/>
+		<field name="fk_user" uuid="223F3424EEFF434CA66EC765689A02D7" type="10" store_as_UUID="true" id="3"/>
+		<field name="messageRef" uuid="B90AEE4175AA86499F204FA9CA4CC4FA" type="10" limiting_length="255" id="4"/>
+		<field name="title" uuid="2825BBDA29A653499F6273F22230BF2C" type="10" limiting_length="255" id="5"/>
+		<field name="type" uuid="8B808249D7C7EE498AE084C14010DEBA" type="10" limiting_length="255" id="6"/>
+		<field name="detail" uuid="FBFD212F655B7049A2F7330762A9D5D6" type="21" blob_switch_size="2147483647" id="7"/>
+		<primary_key field_name="id" field_uuid="9872EBD8C72CB4478B142D5A2D65F040"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="9">
+				<color red="181" green="145" blue="209" alpha="255"/>
+				<coordinates left="1404" top="30" width="182" height="234.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="user" uuid="DEAEE353C5531B488ECA98D070D7820A" id="4" prevent_journaling="true">
+		<field name="id" uuid="56941447DF73EC43B6D4CE061FED065C" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="username" uuid="3A9A2E5782AC5741853328776BF29D99" type="10" limiting_length="255" id="2">
+			<field_extra position="4"/>
+		</field>
+		<field name="password" uuid="B20A6ABC82EC0C408771AE88704E706F" type="10" limiting_length="255" id="3">
+			<field_extra visible="false" position="5"/>
+		</field>
+		<field name="type" uuid="FD67BCE82FB486429A699465B6FDB07B" type="10" limiting_length="255" id="4">
+			<field_extra position="7"/>
+		</field>
+		<field name="fk_client" uuid="6A5D2FA6DEC1F14E8EEF31FF4C9173A4" type="10" limiting_length="255" store_as_UUID="true" id="5">
+			<field_extra position="2"/>
+		</field>
+		<field name="fk_contact" uuid="12AD503899E0554DB0598CB15AA175A3" type="10" limiting_length="255" store_as_UUID="true" id="6">
+			<field_extra position="3"/>
+		</field>
+		<field name="detail" uuid="7E265934B11E244D83E98D3CF02709C4" type="21" blob_switch_size="2147483647" id="7">
+			<field_extra position="8"/>
+		</field>
+		<field name="email" uuid="21D6A03D8F14804C866D5EBF189E3E19" type="10" limiting_length="255" id="8">
+			<field_extra position="6"/>
+		</field>
+		<primary_key field_name="id" field_uuid="56941447DF73EC43B6D4CE061FED065C"/>
+		<table_extra>
+			<editor_table_info fields_ordering="2" displayable_fields_count="9">
+				<color red="249" green="130" blue="127" alpha="255"/>
+				<coordinates left="812" top="89" width="172" height="233.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="change" uuid="B1E633C035E9D9499B1566AB78F7E33C" id="5" prevent_journaling="true">
+		<field name="id" uuid="9F6F67CEB8037140AC34383EFB271CD8" type="10" limiting_length="255" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="fk_user_owner" uuid="DAAA4C9DFD0D324CA3D669AE381B536F" type="10" limiting_length="255" store_as_UUID="true" id="2">
+			<field_extra position="2"/>
+		</field>
+		<field name="fk_user_developer" uuid="0DF9D73AEC026841946EE61E8403003D" type="10" limiting_length="255" store_as_UUID="true" id="3">
+			<field_extra position="3"/>
+		</field>
+		<field name="title" uuid="EBB9F882224B5E4B902B558373548A1B" type="10" limiting_length="255" id="4">
+			<field_extra position="4"/>
+		</field>
+		<field name="requestedTS" uuid="E442F47DCE9563438992F70DFA2C1130" type="10" limiting_length="255" id="5">
+			<field_extra position="9"/>
+		</field>
+		<field name="expectedTS" uuid="02F591FE74738D40B069DBE5B8720179" type="10" limiting_length="255" id="6">
+			<field_extra position="10"/>
+		</field>
+		<field name="completedTS" uuid="6B4A3E172196D7409D74F6ECA4955724" type="10" limiting_length="255" id="7">
+			<field_extra position="11"/>
+		</field>
+		<field name="lastUpdateTS" uuid="8BF39F38D3C3C7478C455D2156D9A87D" type="10" limiting_length="255" id="8">
+			<field_extra position="12"/>
+		</field>
+		<field name="version" uuid="3D3E654C25154748A30511371FF7C443" type="10" limiting_length="255" id="9">
+			<field_extra position="8"/>
+		</field>
+		<field name="status" uuid="463A4128B957424AB4CFB3AC8D7FA83A" type="10" limiting_length="255" id="10">
+			<field_extra position="5"/>
+		</field>
+		<field name="priority" uuid="6B75265A3168564BA756EF7A079027F3" type="10" limiting_length="255" id="11">
+			<field_extra position="6"/>
+		</field>
+		<field name="area" uuid="2CE983263B0B7240AEDAA0E94B6A04E3" type="10" limiting_length="255" id="12">
+			<field_extra position="7"/>
+		</field>
+		<field name="detail" uuid="D5DA59A0C93AD34A96F7E13B51D4B80F" type="21" blob_switch_size="2147483647" id="13">
+			<field_extra position="15"/>
+		</field>
+		<field name="closingTitle" uuid="6D817A28CA917249A7757AD09A298587" type="10" limiting_length="255" id="14">
+			<field_extra position="13"/>
+		</field>
+		<field name="closingSummary" uuid="8A8B658116316C4A8A2D4873E0B3D3BE" type="10" id="15">
+			<field_extra position="14"/>
+		</field>
+		<primary_key field_name="id" field_uuid="9F6F67CEB8037140AC34383EFB271CD8"/>
+		<table_extra>
+			<editor_table_info fields_ordering="2" displayable_fields_count="16">
+				<color red="168" green="206" blue="226" alpha="255"/>
+				<coordinates left="1112" top="517" width="213" height="395.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="changeMessage" uuid="3D864E608BF3A94BA7112DF82BF529D2" id="6" prevent_journaling="true">
+		<field name="id" uuid="6098127F992B684684310021B8E57894" type="10" limiting_length="255" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="fk_change" uuid="5525DF3EB5AAE74CB5B1978EFBB76415" type="10" limiting_length="255" store_as_UUID="true" id="2"/>
+		<field name="fk_user" uuid="8A1C0C4813CF3E4A902CF05E09D68813" type="10" limiting_length="255" store_as_UUID="true" id="3"/>
+		<field name="title" uuid="50945EA350D22C4D984DFEC40AABB1D8" type="10" limiting_length="255" id="4"/>
+		<field name="content" uuid="588CBE90E4942749A3AF7E483E369956" type="10" id="5"/>
+		<field name="type" uuid="C2B0097E8C8BB944B30CB138544606FC" type="10" limiting_length="255" id="6"/>
+		<field name="createdTS" uuid="960FA418CBDD8B4AA6A1D2972A459F5E" type="10" limiting_length="255" id="7"/>
+		<field name="detail" uuid="CB6743EBCF308A45BFB2279D9159C087" type="21" blob_switch_size="2147483647" id="8"/>
+		<primary_key field_name="id" field_uuid="6098127F992B684684310021B8E57894"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="9">
+				<color red="168" green="206" blue="226" alpha="255"/>
+				<coordinates left="1402" top="517" width="174" height="246.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="notification" uuid="A5F140F5BED0DF4FB0718056C690EF5E" id="7" prevent_journaling="true">
+		<field name="id" uuid="CA1D31D6CCAE0A41B3F130A43918DECC" type="10" limiting_length="255" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="fk_user" uuid="1D228908E2AD0A49B1173962410D6111" type="10" limiting_length="255" store_as_UUID="true" id="2"/>
+		<field name="fk_record" uuid="2107A58385CB374F86E16C79B87BE401" type="10" limiting_length="255" store_as_UUID="true" id="3"/>
+		<field name="title" uuid="4761FAF96130614DA92A12FEBCD4486F" type="10" limiting_length="255" id="4"/>
+		<field name="type" uuid="E58BADEC2C76134B8E9026C4FEED1CA3" type="10" limiting_length="255" id="5"/>
+		<field name="message" uuid="3D719774DCDC504EA1168425006126EC" type="10" id="6"/>
+		<field name="createdTS" uuid="E7FA6E78924171489D476538AA075F30" type="10" limiting_length="255" id="7"/>
+		<field name="read" uuid="DEB87CDF05D5E24D91677B704E814330" type="1" id="8"/>
+		<primary_key field_name="id" field_uuid="CA1D31D6CCAE0A41B3F130A43918DECC"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="10">
+				<color red="181" green="223" blue="149" alpha="255"/>
+				<coordinates left="792" top="559" width="161" height="254.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="interface" uuid="9374181ADF3BF048B6007664E8E8D732" id="8" prevent_journaling="true">
+		<field name="id" uuid="9CDF49EE6742884384F44DBCBA94E058" type="10" limiting_length="255" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="fk_user" uuid="0F98C8E3763F954F9D6D7797164833A6" type="10" limiting_length="255" store_as_UUID="true" id="2"/>
+		<field name="name" uuid="50A0295A8C20304183481C61EDDF26CC" type="10" limiting_length="255" id="3"/>
+		<field name="handle" uuid="AE730B343B69C84CBF3A0861C099EA85" type="10" limiting_length="255" id="4"/>
+		<field name="type" uuid="67184F6D2939BA43B16EBEAE43B88A11" type="4" id="5">
+			<field_extra>
+				<comment format="rtf"><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2057{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}{\f1\fnil Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\tx720\cf1\protect\f0\fs17 1 = view\par
+2 = query\f1}]]></comment>
+				<comment format="text"><![CDATA[1 = view2 = query]]></comment>
+			</field_extra>
+		</field>
+		<field name="default" uuid="401EBDD834B98341A268DDE362C567FF" type="1" id="6"/>
+		<field name="detail" uuid="0431C8D991373142913E7035BC26EF7E" type="21" blob_switch_size="2147483647" id="7"/>
+		<primary_key field_name="id" field_uuid="9CDF49EE6742884384F44DBCBA94E058"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="8">
+				<color red="255" green="153" blue="63" alpha="255"/>
+				<coordinates left="590" top="688" width="140" height="217.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="errorReport" uuid="18F90F96E8A61D4D92822B0C9546A7C9" id="9" prevent_journaling="true">
+		<field name="id" uuid="47B3593300F5334390BF1F78B19DC65F" type="10" limiting_length="255" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="fk_company" uuid="709366A89749A6429F1660207C24EBE4" type="10" limiting_length="255" store_as_UUID="true" id="2"/>
+		<field name="title" uuid="3363396C7F8D6C4AADF7036D2A366085" type="10" limiting_length="255" id="3"/>
+		<field name="severity" uuid="5C3DE527EDA47D48AB93EBF073CC1DFB" type="10" limiting_length="255" id="4"/>
+		<field name="createdTS" uuid="A308848C1F36F148B3BAF7943C9A29DF" type="10" limiting_length="255" id="5"/>
+		<field name="detail" uuid="71A35D7390E87745853B752F89227048" type="21" blob_switch_size="2147483647" id="6"/>
+		<primary_key field_name="id" field_uuid="47B3593300F5334390BF1F78B19DC65F"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="10">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="0" top="579" width="131" height="259.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="company" uuid="4A555B6821D9094F967CF4AB795BC5D8" id="10" prevent_journaling="true">
+		<field name="id" uuid="54E03228CA45404988DF34725105B089" type="10" limiting_length="255" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="fk_client" uuid="E7609C7F49A3F8429D81A93E8E4DE205" type="10" limiting_length="255" store_as_UUID="true" id="2"/>
+		<primary_key field_name="id" field_uuid="54E03228CA45404988DF34725105B089"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="11">
+				<color red="226" green="158" blue="214" alpha="255"/>
+				<coordinates left="261" top="116" width="138" height="279.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="contact" uuid="572A708E2FF3D04B9D9026E2D9EAE9FC" id="11" prevent_journaling="true">
+		<field name="id" uuid="4C757B53541E5546BA727F5827CC72D4" type="10" limiting_length="255" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="fk_company" uuid="179BBEBB309918459327E7179714700B" type="10" limiting_length="255" store_as_UUID="true" id="2"/>
+		<primary_key field_name="id" field_uuid="4C757B53541E5546BA727F5827CC72D4"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="12">
+				<color red="226" green="158" blue="214" alpha="255"/>
+				<coordinates left="519" top="103" width="125" height="298.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="lookupList" uuid="BBD725C7C775BE448B7887414F1B5773" id="12" prevent_journaling="true">
+		<field name="id" uuid="3E5E68F560781D4D94E937D36792CBF5" type="10" limiting_length="255" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="fk_client" uuid="A09DF2DB87C6D34EAA14D5D5DCC402A4" type="10" limiting_length="255" store_as_UUID="true" id="2"/>
+		<field name="name" uuid="8D74735BC9EF3149B64A368E25E0F0B1" type="10" limiting_length="255" id="3"/>
+		<field name="detail" uuid="A49AEC512FEAA94D90F67FD296508BC1" type="21" blob_switch_size="2147483647" id="4"/>
+		<primary_key field_name="id" field_uuid="3E5E68F560781D4D94E937D36792CBF5"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="7">
+				<color red="255" green="153" blue="63" alpha="255"/>
+				<coordinates left="421" top="693" width="148" height="189.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="messageQueue" uuid="E6A42F691DDAC34A89674B69DBAD707A" id="13" prevent_journaling="true">
+		<field name="id" uuid="26E3693711E44F4290D5573170B5C2A8" type="10" limiting_length="255" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="fk_user" uuid="E56E1DE67CADC64E9D08C71907938625" type="10" limiting_length="255" store_as_UUID="true" id="2"/>
+		<field name="type" uuid="573E2851B5FA144B88569074D627C829" type="10" limiting_length="255" id="3"/>
+		<field name="createdTS" uuid="D3832CC7BC98274F80D55B8EF1FE033B" type="10" limiting_length="255" id="4"/>
+		<field name="completedTS" uuid="5E867F644D10FB4AB60610CD7C187845" type="10" limiting_length="255" id="5"/>
+		<field name="detail" uuid="9E81D11CBEBA1742AC2CCCE66A910B7A" type="10" limiting_length="255" id="6"/>
+		<primary_key field_name="id" field_uuid="26E3693711E44F4290D5573170B5C2A8"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="9">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="197" top="709" width="137" height="246.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<relation uuid="A7B69053D8186549A487DAB36C9813AA" name_Nto1="Link_1" name_1toN="user_technician_ticket" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="2F41B7F32B3A494AA1B4ABF14A880272" name="fk_user_technician">
+				<table_ref uuid="C0B2CDE8D5C213419EFC043373F23438" name="ticket"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="56941447DF73EC43B6D4CE061FED065C" name="id">
+				<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="D7CF0DE35BED9847BFAC43DAEE62D6FD" name_Nto1="Link_2" name_1toN="Link_2_return" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="5DA138D8D0118E4AADAE840D774F4BF1" name="fk_user_company">
+				<table_ref uuid="C0B2CDE8D5C213419EFC043373F23438" name="ticket"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="56941447DF73EC43B6D4CE061FED065C" name="id">
+				<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="0" via_point_y="0" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="C717C5545BE95F4E98843763154CA20B" name_Nto1="ticketMessage_user" name_1toN="user_ticketMessage" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="223F3424EEFF434CA66EC765689A02D7" name="fk_user">
+				<table_ref uuid="2CF85C781468D34F8DFD192591D83103" name="ticketMessage"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="56941447DF73EC43B6D4CE061FED065C" name="id">
+				<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="A9D5834881DA35469788BA8D2079399A" name_Nto1="ticketMessage_ticket" name_1toN="ticket_ticketMessage" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="E02CF1F24961CA4B8BBFC27D350F38E2" name="fk_ticket">
+				<table_ref uuid="2CF85C781468D34F8DFD192591D83103" name="ticketMessage"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="26A1561FCD1A244EB3AFB5C723DDC23A" name="id">
+				<table_ref uuid="C0B2CDE8D5C213419EFC043373F23438" name="ticket"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="0E3BFAF5881B2A4C92A2AA4260A018BF" name_Nto1="user_client" name_1toN="client_user" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="6A5D2FA6DEC1F14E8EEF31FF4C9173A4" name="fk_client">
+				<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="4E2FEED7D9AEA0499EF9B59A1466BB3F" name="id">
+				<table_ref uuid="11E711B66203EE4CB281BE33F8295020" name="client"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="CAB202DBD48E564CA528D140B30CC260" name_Nto1="changeMessage_change" name_1toN="change_changeMessage" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="5525DF3EB5AAE74CB5B1978EFBB76415" name="fk_change">
+				<table_ref uuid="3D864E608BF3A94BA7112DF82BF529D2" name="changeMessage"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="9F6F67CEB8037140AC34383EFB271CD8" name="id">
+				<table_ref uuid="B1E633C035E9D9499B1566AB78F7E33C" name="change"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="8D17291CEC073544BF7DA139A2A5ED66" name_Nto1="changeMessage_user" name_1toN="user_changeMessage" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="8A1C0C4813CF3E4A902CF05E09D68813" name="fk_user">
+				<table_ref uuid="3D864E608BF3A94BA7112DF82BF529D2" name="changeMessage"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="56941447DF73EC43B6D4CE061FED065C" name="id">
+				<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="48F3725D5317DF4FBFA4E0CE7B892FCE" name_Nto1="change_user_owner" name_1toN="user_owner_change" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="DAAA4C9DFD0D324CA3D669AE381B536F" name="fk_user_owner">
+				<table_ref uuid="B1E633C035E9D9499B1566AB78F7E33C" name="change"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="56941447DF73EC43B6D4CE061FED065C" name="id">
+				<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="A2E1E63D9D952D4CAC30B41FB55E5DBB" name_Nto1="change_user_developer" name_1toN="user_developer_change" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="0DF9D73AEC026841946EE61E8403003D" name="fk_user_developer">
+				<table_ref uuid="B1E633C035E9D9499B1566AB78F7E33C" name="change"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="56941447DF73EC43B6D4CE061FED065C" name="id">
+				<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="0" via_point_y="0" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="8919F9DA770B254082D097FCF8A813C6" name_Nto1="notification_user" name_1toN="user_notification" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="1D228908E2AD0A49B1173962410D6111" name="fk_user">
+				<table_ref uuid="A5F140F5BED0DF4FB0718056C690EF5E" name="notification"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="56941447DF73EC43B6D4CE061FED065C" name="id">
+				<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="00775634E5A6B64EA54090FB72259986" name_Nto1="interface_user" name_1toN="user_interface" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="0F98C8E3763F954F9D6D7797164833A6" name="fk_user">
+				<table_ref uuid="9374181ADF3BF048B6007664E8E8D732" name="interface"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="56941447DF73EC43B6D4CE061FED065C" name="id">
+				<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="FCFE4004A489F44BADAD10B3DE977389" name_Nto1="user_contact" name_1toN="contact_user" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="12AD503899E0554DB0598CB15AA175A3" name="fk_contact">
+				<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="4C757B53541E5546BA727F5827CC72D4" name="id">
+				<table_ref uuid="572A708E2FF3D04B9D9026E2D9EAE9FC" name="contact"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="0276E6A8B7A2614C929AC68BCA15A475" name_Nto1="contact_company" name_1toN="company_contact" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="179BBEBB309918459327E7179714700B" name="fk_company">
+				<table_ref uuid="572A708E2FF3D04B9D9026E2D9EAE9FC" name="contact"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="54E03228CA45404988DF34725105B089" name="id">
+				<table_ref uuid="4A555B6821D9094F967CF4AB795BC5D8" name="company"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="EE8A26B57751084D9B772772DF68BB96" name_Nto1="company_client" name_1toN="client_company" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="E7609C7F49A3F8429D81A93E8E4DE205" name="fk_client">
+				<table_ref uuid="4A555B6821D9094F967CF4AB795BC5D8" name="company"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="4E2FEED7D9AEA0499EF9B59A1466BB3F" name="id">
+				<table_ref uuid="11E711B66203EE4CB281BE33F8295020" name="client"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="68AE3102CB01A24A89001CD9C18555FE" name_Nto1="ticket_contact" name_1toN="contact_ticket" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="BD405616FE931042BD585CB877BD60B3" name="fk_contact">
+				<table_ref uuid="C0B2CDE8D5C213419EFC043373F23438" name="ticket"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="4C757B53541E5546BA727F5827CC72D4" name="id">
+				<table_ref uuid="572A708E2FF3D04B9D9026E2D9EAE9FC" name="contact"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="11317D6CE5C13A429C4E6C273F133770" name_Nto1="lookupList_client" name_1toN="client_lookupList" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="A09DF2DB87C6D34EAA14D5D5DCC402A4" name="fk_client">
+				<table_ref uuid="BBD725C7C775BE448B7887414F1B5773" name="lookupList"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="4E2FEED7D9AEA0499EF9B59A1466BB3F" name="id">
+				<table_ref uuid="11E711B66203EE4CB281BE33F8295020" name="client"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="299D8192057E0A40A3C4F79FB2B84952" name_Nto1="messageQueue_user" name_1toN="user_messageQueue" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="E56E1DE67CADC64E9D08C71907938625" name="fk_user">
+				<table_ref uuid="E6A42F691DDAC34A89674B69DBAD707A" name="messageQueue"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="56941447DF73EC43B6D4CE061FED065C" name="id">
+				<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<index kind="regular" unique_keys="true" uuid="044E6573859AEC4B9DDE2F36883F49E5" type="7">
+		<field_ref uuid="9CDF49EE6742884384F44DBCBA94E058" name="id">
+			<table_ref uuid="9374181ADF3BF048B6007664E8E8D732" name="interface"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="0B8834B57CA72D48820CDE96DD7EF488" type="7">
+		<field_ref uuid="DAAA4C9DFD0D324CA3D669AE381B536F" name="fk_user_owner">
+			<table_ref uuid="B1E633C035E9D9499B1566AB78F7E33C" name="change"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="142B2EF0927440428C0CA4FB0B399510" type="7">
+		<field_ref uuid="CA1D31D6CCAE0A41B3F130A43918DECC" name="id">
+			<table_ref uuid="A5F140F5BED0DF4FB0718056C690EF5E" name="notification"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="19A861276754A24CBFBD430F03F8E094" type="7">
+		<field_ref uuid="26E3693711E44F4290D5573170B5C2A8" name="id">
+			<table_ref uuid="E6A42F691DDAC34A89674B69DBAD707A" name="messageQueue"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="23A3DC3FCCF82C4F83C892E0D339F97A" type="7">
+		<field_ref uuid="6098127F992B684684310021B8E57894" name="id">
+			<table_ref uuid="3D864E608BF3A94BA7112DF82BF529D2" name="changeMessage"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="24599E70F056BA41B3C94740690915EE" type="7">
+		<field_ref uuid="12AD503899E0554DB0598CB15AA175A3" name="fk_contact">
+			<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="2A52AD76AA2BF64CBAA04FD024F117FB" type="7">
+		<field_ref uuid="8D74735BC9EF3149B64A368E25E0F0B1" name="name">
+			<table_ref uuid="BBD725C7C775BE448B7887414F1B5773" name="lookupList"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="367316491C39854AA2E21DB94F73931F" type="7">
+		<field_ref uuid="2CE983263B0B7240AEDAA0E94B6A04E3" name="area">
+			<table_ref uuid="B1E633C035E9D9499B1566AB78F7E33C" name="change"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="451251AA39B160488C671B8C09795EE2" type="7">
+		<field_ref uuid="56941447DF73EC43B6D4CE061FED065C" name="id">
+			<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="56839BE59838C744A976328B91E981ED" type="7">
+		<field_ref uuid="E02CF1F24961CA4B8BBFC27D350F38E2" name="fk_ticket">
+			<table_ref uuid="2CF85C781468D34F8DFD192591D83103" name="ticketMessage"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="5BA200F4A6A51749B835A15B38EAA712" type="7">
+		<field_ref uuid="5525DF3EB5AAE74CB5B1978EFBB76415" name="fk_change">
+			<table_ref uuid="3D864E608BF3A94BA7112DF82BF529D2" name="changeMessage"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="6642D83BC6C58449A88665F6F6FE8C31" type="7">
+		<field_ref uuid="E7609C7F49A3F8429D81A93E8E4DE205" name="fk_client">
+			<table_ref uuid="4A555B6821D9094F967CF4AB795BC5D8" name="company"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="6B7BFACB3CAAAC418633E2D4EBB86AA4" type="7">
+		<field_ref uuid="463A4128B957424AB4CFB3AC8D7FA83A" name="status">
+			<table_ref uuid="B1E633C035E9D9499B1566AB78F7E33C" name="change"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="71CFAA8DE635F842B57D0010198E4487" type="7">
+		<field_ref uuid="BD405616FE931042BD585CB877BD60B3" name="fk_contact">
+			<table_ref uuid="C0B2CDE8D5C213419EFC043373F23438" name="ticket"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="73E6740C716C684BA67373D3EAF2E293" type="7">
+		<field_ref uuid="FEBAF0F50D0FCA4AAF2BAB42D6BF096D" name="priority">
+			<table_ref uuid="C0B2CDE8D5C213419EFC043373F23438" name="ticket"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="757EE912C77CD5459B3C6203FA5F3F99" type="7">
+		<field_ref uuid="6A5D2FA6DEC1F14E8EEF31FF4C9173A4" name="fk_client">
+			<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="7FF77BFEA8A460468723BA5BD2D23C0A" type="7">
+		<field_ref uuid="1D228908E2AD0A49B1173962410D6111" name="fk_user">
+			<table_ref uuid="A5F140F5BED0DF4FB0718056C690EF5E" name="notification"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="832964BA3D41B744BA18DCF0A1E15269" type="7">
+		<field_ref uuid="223F3424EEFF434CA66EC765689A02D7" name="fk_user">
+			<table_ref uuid="2CF85C781468D34F8DFD192591D83103" name="ticketMessage"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="8BD705F6140718459DF48BF91F0A6CCB" type="7">
+		<field_ref uuid="5C3DE527EDA47D48AB93EBF073CC1DFB" name="severity">
+			<table_ref uuid="18F90F96E8A61D4D92822B0C9546A7C9" name="errorReport"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="8D4ED8F635408242A91A8EAF98C3B766" type="7">
+		<field_ref uuid="2F41B7F32B3A494AA1B4ABF14A880272" name="fk_user_technician">
+			<table_ref uuid="C0B2CDE8D5C213419EFC043373F23438" name="ticket"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="8E591B8E7FCAE74CA51C737BFA02CC35" type="7">
+		<field_ref uuid="4C757B53541E5546BA727F5827CC72D4" name="id">
+			<table_ref uuid="572A708E2FF3D04B9D9026E2D9EAE9FC" name="contact"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="98554D82EF36114EAB0DD34FF3B46BA3" type="7">
+		<field_ref uuid="DEB87CDF05D5E24D91677B704E814330" name="read">
+			<table_ref uuid="A5F140F5BED0DF4FB0718056C690EF5E" name="notification"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="A83183E4FD495D43A0A85506BAE417B0" type="7">
+		<field_ref uuid="6B75265A3168564BA756EF7A079027F3" name="priority">
+			<table_ref uuid="B1E633C035E9D9499B1566AB78F7E33C" name="change"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="B196FEA1C1D24B4784DF2DCFC059DC4F" type="7">
+		<field_ref uuid="3E5E68F560781D4D94E937D36792CBF5" name="id">
+			<table_ref uuid="BBD725C7C775BE448B7887414F1B5773" name="lookupList"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="B830ED836C91704AA2BFA88911E4025F" type="7">
+		<field_ref uuid="54E03228CA45404988DF34725105B089" name="id">
+			<table_ref uuid="4A555B6821D9094F967CF4AB795BC5D8" name="company"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="BF584C54C19F9D47A97474FE23815451" type="7">
+		<field_ref uuid="722F2F21A96EA349B756CCDDBF821171" name="state">
+			<table_ref uuid="C0B2CDE8D5C213419EFC043373F23438" name="ticket"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="C1BD22248360424B86F7AB162C61E2B0" type="7">
+		<field_ref uuid="E56E1DE67CADC64E9D08C71907938625" name="fk_user">
+			<table_ref uuid="E6A42F691DDAC34A89674B69DBAD707A" name="messageQueue"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="C35AFD17B1969D47903CA4DD9B38D9F3" type="7">
+		<field_ref uuid="9872EBD8C72CB4478B142D5A2D65F040" name="id">
+			<table_ref uuid="2CF85C781468D34F8DFD192591D83103" name="ticketMessage"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="C6EE50A431C1F4479B74BD1ABACAD49C" type="7">
+		<field_ref uuid="67184F6D2939BA43B16EBEAE43B88A11" name="type">
+			<table_ref uuid="9374181ADF3BF048B6007664E8E8D732" name="interface"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="C7C69240B7D8304BB33330C76EBF19D9" type="7">
+		<field_ref uuid="179BBEBB309918459327E7179714700B" name="fk_company">
+			<table_ref uuid="572A708E2FF3D04B9D9026E2D9EAE9FC" name="contact"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="CA0B508C30D0C640BFE53BB0B5688DDD" type="7">
+		<field_ref uuid="0F98C8E3763F954F9D6D7797164833A6" name="fk_user">
+			<table_ref uuid="9374181ADF3BF048B6007664E8E8D732" name="interface"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="CD07C2EE29DCE6458EE2FE4A31F97014" type="7">
+		<field_ref uuid="26A1561FCD1A244EB3AFB5C723DDC23A" name="id">
+			<table_ref uuid="C0B2CDE8D5C213419EFC043373F23438" name="ticket"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="DE5F0191904C294E83481E7167A09F40" type="7">
+		<field_ref uuid="5DA138D8D0118E4AADAE840D774F4BF1" name="fk_user_company">
+			<table_ref uuid="C0B2CDE8D5C213419EFC043373F23438" name="ticket"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="E0A6C2DC4B25014F8E15F3824AAEE872" type="7">
+		<field_ref uuid="47B3593300F5334390BF1F78B19DC65F" name="id">
+			<table_ref uuid="18F90F96E8A61D4D92822B0C9546A7C9" name="errorReport"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="E82E613560FDE04C95C5FBE645116B4D" type="7">
+		<field_ref uuid="4E2FEED7D9AEA0499EF9B59A1466BB3F" name="id">
+			<table_ref uuid="11E711B66203EE4CB281BE33F8295020" name="client"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="E87760BB5830BB4F9F32359D18AF0C64" type="7">
+		<field_ref uuid="8A1C0C4813CF3E4A902CF05E09D68813" name="fk_user">
+			<table_ref uuid="3D864E608BF3A94BA7112DF82BF529D2" name="changeMessage"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="E89C1BBE200A2D4681D1390A0EFBE5AA" type="7">
+		<field_ref uuid="9F6F67CEB8037140AC34383EFB271CD8" name="id">
+			<table_ref uuid="B1E633C035E9D9499B1566AB78F7E33C" name="change"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="E8B1AE6EAA53B4459EB7D391023D9C8E" type="7">
+		<field_ref uuid="0DF9D73AEC026841946EE61E8403003D" name="fk_user_developer">
+			<table_ref uuid="B1E633C035E9D9499B1566AB78F7E33C" name="change"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="F82AF03C04AE20448B0481F2E7E51E4E" type="7">
+		<field_ref uuid="A09DF2DB87C6D34EAA14D5D5DCC402A4" name="fk_client">
+			<table_ref uuid="BBD725C7C775BE448B7887414F1B5773" name="lookupList"/>
+		</field_ref>
+	</index>
+	<base_extra __stringCompHash="icu:68.1.0" __keywordBuildingHash="icu:68.1.0">
+		<journal_file journal_file_enabled="true"/>
+	</base_extra>
+</base>
