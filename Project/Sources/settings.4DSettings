@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><preferences stamp="3">
+	<com.4d>
+		<server>
+			<network>
+				<options publication_name="SupportBase" publication_port="19001"/>
+			</network>
+		</server>
+		<web>
+			<standalone_server>
+				<configuration https_port_number="8085" listening_address="192.168.1.35" port_number="8080">
+					<hosts>
+						<host home_page="index.html" id="0" name="default"/>
+					</hosts>
+				</configuration>
+			</standalone_server>
+		</web>
+		<sql>
+			<publication port_number="19002"/>
+		</sql>
+		<php ip_address="127.0.0.1"/>
+	</com.4d>
+</preferences>

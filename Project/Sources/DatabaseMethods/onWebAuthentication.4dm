@@ -16,13 +16,8 @@ Case of
 	: ($2="@Origin: http://localhost:@") | ($2="@Host: 192.168.1.35:8085@")  //Development hack
 		C_TEXT:C284($passwordHash)
 		
-		//Telekinetix
-		//vt_userID:="6A5CEA3BC08FF2429C193E86B88B76A5"
-		//vt_accountID:="5B52974FEF73384B942D2B3BC9C57A41"
-		
-		//Xylem
-		vt_userID:="6A5CEA3BC08FF2429C193E86B88B76A5"
-		vt_accountID:="26CF12A9153AC14D8CCE1233D60FE600"
+		vt_userID:="F59BD6344D6F194B813CF59ABFB7130E"
+		vt_clientId:="CF59157DBFDB484BABCB8ABFA1BDE99A"
 		
 		$e_user:=ds:C1482.user.get(vt_userID)
 		vo_currentUser:=$e_user.toObject()

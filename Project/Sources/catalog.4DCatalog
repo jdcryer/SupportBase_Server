@@ -9,7 +9,7 @@
 		<field name="address" uuid="6441F7D5A704384AB97433F6EAAD79E9" type="21" blob_switch_size="2147483647" id="4"/>
 		<field name="detail" uuid="B0E6EBDDFBC36546865625C94193D633" type="21" blob_switch_size="2147483647" id="5"/>
 		<primary_key field_name="id" field_uuid="4E2FEED7D9AEA0499EF9B59A1466BB3F"/>
-		<table_extra>
+		<table_extra output_form="Output">
 			<editor_table_info displayable_fields_count="7">
 				<color red="237" green="211" blue="181" alpha="255"/>
 				<coordinates left="18" top="46" width="163" height="190.33203125"/>
