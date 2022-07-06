@@ -93,7 +93,7 @@
 		<table_extra>
 			<editor_table_info fields_ordering="2" displayable_fields_count="10">
 				<color red="181" green="145" blue="209" alpha="255"/>
-				<coordinates left="1404" top="30" width="190" height="257.33203125"/>
+				<coordinates left="1439" top="32" width="190" height="257.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -126,7 +126,7 @@
 		<table_extra>
 			<editor_table_info fields_ordering="2" displayable_fields_count="9">
 				<color red="249" green="130" blue="127" alpha="255"/>
-				<coordinates left="812" top="89" width="172" height="233.33203125"/>
+				<coordinates left="836" top="159" width="172" height="233.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
