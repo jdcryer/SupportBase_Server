@@ -340,10 +340,10 @@
 		<field name="id" uuid="077D3E2079AAD74B86C7E040D6CE9652" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1">
 			<field_extra position="1"/>
 		</field>
-		<field name="fk_resource" uuid="45BF4705E63CCE47A38B6F700EF93943" type="10" limiting_length="255" store_as_UUID="true" id="2">
+		<field name="fk_resource" uuid="45BF4705E63CCE47A38B6F700EF93943" type="10" store_as_UUID="true" id="2">
 			<field_extra position="3"/>
 		</field>
-		<field name="fk_company" uuid="91C2250EE48CF442B4E1AB235EB13049" type="10" limiting_length="255" store_as_UUID="true" id="3">
+		<field name="fk_company" uuid="91C2250EE48CF442B4E1AB235EB13049" type="10" store_as_UUID="true" id="3">
 			<field_extra position="2"/>
 		</field>
 		<field name="name" uuid="FF073256E84E0743A4F79455B1E5551E" type="10" limiting_length="255" id="4">
