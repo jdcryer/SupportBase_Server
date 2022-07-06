@@ -255,7 +255,7 @@
 		<table_extra>
 			<editor_table_info displayable_fields_count="10">
 				<color red="255" green="255" blue="255" alpha="0"/>
-				<coordinates left="0" top="579" width="131" height="259.33203125"/>
+				<coordinates left="0" top="709" width="131" height="259.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -298,7 +298,7 @@
 	<table name="lookupList" uuid="BBD725C7C775BE448B7887414F1B5773" id="12" prevent_journaling="true">
 		<field name="id" uuid="3E5E68F560781D4D94E937D36792CBF5" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
 		<field name="fk_client" uuid="A09DF2DB87C6D34EAA14D5D5DCC402A4" type="10" store_as_UUID="true" id="2"/>
-		<field name="type" uuid="8D74735BC9EF3149B64A368E25E0F0B1" type="10" limiting_length="255" id="3"/>
+		<field name="name" uuid="8D74735BC9EF3149B64A368E25E0F0B1" type="10" limiting_length="255" id="3"/>
 		<field name="detail" uuid="A49AEC512FEAA94D90F67FD296508BC1" type="21" blob_switch_size="2147483647" id="4"/>
 		<primary_key field_name="id" field_uuid="3E5E68F560781D4D94E937D36792CBF5"/>
 		<table_extra>
@@ -320,6 +320,56 @@
 			<editor_table_info displayable_fields_count="9">
 				<color red="255" green="255" blue="255" alpha="0"/>
 				<coordinates left="182" top="686" width="137" height="246.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="resource" uuid="BD0A9662DBFB494A9D61BB5872041DA2" id="14">
+		<field name="id" uuid="6D7A582F51A11E41B52EB9CAA761D5CD" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="name" uuid="08E1CEF52443774382FA44612C55A31F" type="10" limiting_length="255" id="2"/>
+		<field name="type" uuid="86087C04807E084EA32FFBB5B9E18B4B" type="10" limiting_length="20" id="3"/>
+		<field name="detail" uuid="6E1540B3C9A11444B6C3E46E6859B2A2" type="21" blob_switch_size="2147483647" id="4"/>
+		<primary_key field_name="id" field_uuid="6D7A582F51A11E41B52EB9CAA761D5CD"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="232" top="473" width="148" height="182.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="resourceUsage" uuid="C3BE4C97B37B624F9AB9E4AA5B221CED" id="15">
+		<field name="id" uuid="077D3E2079AAD74B86C7E040D6CE9652" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="fk_resource" uuid="45BF4705E63CCE47A38B6F700EF93943" type="10" limiting_length="255" store_as_UUID="true" id="2">
+			<field_extra position="3"/>
+		</field>
+		<field name="fk_company" uuid="91C2250EE48CF442B4E1AB235EB13049" type="10" limiting_length="255" store_as_UUID="true" id="3">
+			<field_extra position="2"/>
+		</field>
+		<field name="name" uuid="FF073256E84E0743A4F79455B1E5551E" type="10" limiting_length="255" id="4">
+			<field_extra position="4"/>
+		</field>
+		<field name="detail" uuid="DB881334E061B64FA0FFDA383E7372D0" type="21" blob_switch_size="2147483647" id="5">
+			<field_extra position="5"/>
+		</field>
+		<primary_key field_name="id" field_uuid="077D3E2079AAD74B86C7E040D6CE9652"/>
+		<table_extra>
+			<editor_table_info fields_ordering="2" displayable_fields_count="7">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="516" top="468" width="163" height="188.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="detailModel" uuid="740F288932A88F4D9F8C3E5C969FAA38" id="16">
+		<field name="id" uuid="6B88A997CC72E94BB33DE604CF0095B4" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="tableId" uuid="ED43B65D8227D942A7091AF31FE132AA" type="4" id="2"/>
+		<field name="type" uuid="7305E0BEB077F54CA18FFBD03BD0DCA8" type="10" limiting_length="20" id="3"/>
+		<field name="model" uuid="37A915396615AF4284FDCFC39C4FD80E" type="21" blob_switch_size="2147483647" id="4"/>
+		<primary_key field_name="id" field_uuid="6B88A997CC72E94BB33DE604CF0095B4"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="5" top="471" width="120" height="167.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -578,6 +628,40 @@
 			</editor_relation_info>
 		</relation_extra>
 	</relation>
+	<relation uuid="2EDE5223B880194B91C50DBA1A88ECBB" name_Nto1="resourceUsage_resource" name_1toN="resource_resourceUsage" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="45BF4705E63CCE47A38B6F700EF93943" name="fk_resource">
+				<table_ref uuid="C3BE4C97B37B624F9AB9E4AA5B221CED" name="resourceUsage"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="6D7A582F51A11E41B52EB9CAA761D5CD" name="id">
+				<table_ref uuid="BD0A9662DBFB494A9D61BB5872041DA2" name="resource"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="79F1198834BC9E42BB4F990B45C3F173" name_Nto1="resourceUsage_company" name_1toN="company_resourceUsage" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="91C2250EE48CF442B4E1AB235EB13049" name="fk_company">
+				<table_ref uuid="C3BE4C97B37B624F9AB9E4AA5B221CED" name="resourceUsage"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="54E03228CA45404988DF34725105B089" name="id">
+				<table_ref uuid="4A555B6821D9094F967CF4AB795BC5D8" name="company"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
 	<index kind="regular" unique_keys="true" uuid="044E6573859AEC4B9DDE2F36883F49E5" type="7">
 		<field_ref uuid="9CDF49EE6742884384F44DBCBA94E058" name="id">
 			<table_ref uuid="9374181ADF3BF048B6007664E8E8D732" name="interface"/>
@@ -598,11 +682,6 @@
 			<table_ref uuid="E6A42F691DDAC34A89674B69DBAD707A" name="messageQueue"/>
 		</field_ref>
 	</index>
-	<index kind="regular" uuid="205C9EC8644D5F409784DC78B53244F9" type="7">
-		<field_ref uuid="6A5D2FA6DEC1F14E8EEF31FF4C9173A4" name="tableId">
-			<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
-		</field_ref>
-	</index>
 	<index kind="regular" unique_keys="true" uuid="23A3DC3FCCF82C4F83C892E0D339F97A" type="7">
 		<field_ref uuid="6098127F992B684684310021B8E57894" name="id">
 			<table_ref uuid="3D864E608BF3A94BA7112DF82BF529D2" name="changeMessage"/>
@@ -614,8 +693,18 @@
 		</field_ref>
 	</index>
 	<index kind="regular" uuid="2A52AD76AA2BF64CBAA04FD024F117FB" type="7">
-		<field_ref uuid="8D74735BC9EF3149B64A368E25E0F0B1" name="type">
+		<field_ref uuid="8D74735BC9EF3149B64A368E25E0F0B1" name="name">
 			<table_ref uuid="BBD725C7C775BE448B7887414F1B5773" name="lookupList"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="336606A95EC25B43BDA2FDADA3C2F88A" type="7">
+		<field_ref uuid="6A5D2FA6DEC1F14E8EEF31FF4C9173A4" name="tableId">
+			<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="3593F80D4D07024CA66E7DB2CB330F08" type="7">
+		<field_ref uuid="6B88A997CC72E94BB33DE604CF0095B4" name="id">
+			<table_ref uuid="740F288932A88F4D9F8C3E5C969FAA38" name="detailModel"/>
 		</field_ref>
 	</index>
 	<index kind="regular" uuid="367316491C39854AA2E21DB94F73931F" type="7">
@@ -661,6 +750,11 @@
 	<index kind="regular" uuid="7FF77BFEA8A460468723BA5BD2D23C0A" type="7">
 		<field_ref uuid="1D228908E2AD0A49B1173962410D6111" name="fk_user">
 			<table_ref uuid="A5F140F5BED0DF4FB0718056C690EF5E" name="notification"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="81F1C4EA89A79D438B18DC62EF3EFE54" type="7">
+		<field_ref uuid="6D7A582F51A11E41B52EB9CAA761D5CD" name="id">
+			<table_ref uuid="BD0A9662DBFB494A9D61BB5872041DA2" name="resource"/>
 		</field_ref>
 	</index>
 	<index kind="regular" uuid="832964BA3D41B744BA18DCF0A1E15269" type="7">
@@ -746,6 +840,11 @@
 	<index kind="regular" unique_keys="true" uuid="E0A6C2DC4B25014F8E15F3824AAEE872" type="7">
 		<field_ref uuid="47B3593300F5334390BF1F78B19DC65F" name="id">
 			<table_ref uuid="18F90F96E8A61D4D92822B0C9546A7C9" name="errorReport"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="E711D3CCADDD6B42B2475A5CAC1A6D80" type="7">
+		<field_ref uuid="077D3E2079AAD74B86C7E040D6CE9652" name="id">
+			<table_ref uuid="C3BE4C97B37B624F9AB9E4AA5B221CED" name="resourceUsage"/>
 		</field_ref>
 	</index>
 	<index kind="regular" unique_keys="true" uuid="E82E613560FDE04C95C5FBE645116B4D" type="7">
