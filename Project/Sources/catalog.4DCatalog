@@ -298,7 +298,7 @@
 	<table name="lookupList" uuid="BBD725C7C775BE448B7887414F1B5773" id="12" prevent_journaling="true">
 		<field name="id" uuid="3E5E68F560781D4D94E937D36792CBF5" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
 		<field name="fk_client" uuid="A09DF2DB87C6D34EAA14D5D5DCC402A4" type="10" store_as_UUID="true" id="2"/>
-		<field name="name" uuid="8D74735BC9EF3149B64A368E25E0F0B1" type="10" limiting_length="255" id="3"/>
+		<field name="type" uuid="8D74735BC9EF3149B64A368E25E0F0B1" type="10" limiting_length="255" id="3"/>
 		<field name="detail" uuid="A49AEC512FEAA94D90F67FD296508BC1" type="21" blob_switch_size="2147483647" id="4"/>
 		<primary_key field_name="id" field_uuid="3E5E68F560781D4D94E937D36792CBF5"/>
 		<table_extra>
@@ -598,6 +598,11 @@
 			<table_ref uuid="E6A42F691DDAC34A89674B69DBAD707A" name="messageQueue"/>
 		</field_ref>
 	</index>
+	<index kind="regular" uuid="205C9EC8644D5F409784DC78B53244F9" type="7">
+		<field_ref uuid="6A5D2FA6DEC1F14E8EEF31FF4C9173A4" name="tableId">
+			<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
+		</field_ref>
+	</index>
 	<index kind="regular" unique_keys="true" uuid="23A3DC3FCCF82C4F83C892E0D339F97A" type="7">
 		<field_ref uuid="6098127F992B684684310021B8E57894" name="id">
 			<table_ref uuid="3D864E608BF3A94BA7112DF82BF529D2" name="changeMessage"/>
@@ -609,13 +614,8 @@
 		</field_ref>
 	</index>
 	<index kind="regular" uuid="2A52AD76AA2BF64CBAA04FD024F117FB" type="7">
-		<field_ref uuid="8D74735BC9EF3149B64A368E25E0F0B1" name="name">
+		<field_ref uuid="8D74735BC9EF3149B64A368E25E0F0B1" name="type">
 			<table_ref uuid="BBD725C7C775BE448B7887414F1B5773" name="lookupList"/>
-		</field_ref>
-	</index>
-	<index kind="regular" uuid="336606A95EC25B43BDA2FDADA3C2F88A" type="7">
-		<field_ref uuid="6A5D2FA6DEC1F14E8EEF31FF4C9173A4" name="tableId">
-			<table_ref uuid="DEAEE353C5531B488ECA98D070D7820A" name="user"/>
 		</field_ref>
 	</index>
 	<index kind="regular" uuid="367316491C39854AA2E21DB94F73931F" type="7">
