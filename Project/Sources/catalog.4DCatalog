@@ -9,7 +9,7 @@
 		<field name="address" uuid="6441F7D5A704384AB97433F6EAAD79E9" type="21" blob_switch_size="2147483647" id="4"/>
 		<field name="detail" uuid="B0E6EBDDFBC36546865625C94193D633" type="21" blob_switch_size="2147483647" id="5"/>
 		<primary_key field_name="id" field_uuid="4E2FEED7D9AEA0499EF9B59A1466BB3F"/>
-		<table_extra>
+		<table_extra output_form="Output">
 			<editor_table_info displayable_fields_count="7">
 				<color red="237" green="211" blue="181" alpha="255"/>
 				<coordinates left="18" top="46" width="163" height="190.33203125"/>
@@ -340,10 +340,10 @@
 		<field name="id" uuid="077D3E2079AAD74B86C7E040D6CE9652" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1">
 			<field_extra position="1"/>
 		</field>
-		<field name="fk_resource" uuid="45BF4705E63CCE47A38B6F700EF93943" type="10" limiting_length="255" store_as_UUID="true" id="2">
+		<field name="fk_resource" uuid="45BF4705E63CCE47A38B6F700EF93943" type="10" store_as_UUID="true" id="2">
 			<field_extra position="3"/>
 		</field>
-		<field name="fk_company" uuid="91C2250EE48CF442B4E1AB235EB13049" type="10" limiting_length="255" store_as_UUID="true" id="3">
+		<field name="fk_company" uuid="91C2250EE48CF442B4E1AB235EB13049" type="10" store_as_UUID="true" id="3">
 			<field_extra position="2"/>
 		</field>
 		<field name="name" uuid="FF073256E84E0743A4F79455B1E5551E" type="10" limiting_length="255" id="4">

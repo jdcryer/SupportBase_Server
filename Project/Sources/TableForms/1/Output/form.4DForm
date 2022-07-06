@@ -1,0 +1,96 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 30,
+	"markerBody": 60,
+	"events": [
+		"onLoad"
+	],
+	"windowTitle": "window title",
+	"destination": "listScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"listbox": {
+					"type": "listbox",
+					"dataSource": "Form:C1466.currentSelection",
+					"top": 10,
+					"left": 10,
+					"width": 370,
+					"height": 300,
+					"visibility": "visible",
+					"sizingX": "fixed",
+					"sizingY": "grow",
+					"headerHeight": "2em",
+					"listboxType": "collection",
+					"scrollbarHorizontal": "automatic",
+					"scrollbarVertical": "automatic",
+					"resizingMode": "legacy",
+					"columns": [
+						{
+							"name": "id",
+							"dataSource": "This:C1470.id",
+							"width": 120,
+							"enterable": false,
+							"header": {
+								"text": "Id",
+								"name": ""
+							},
+							"footer": {
+								"name": "1"
+							}
+						},
+						{
+							"name": "code",
+							"dataSource": "This:C1470.code",
+							"width": 120,
+							"enterable": true,
+							"header": {
+								"text": "Code",
+								"name": "2"
+							},
+							"footer": {
+								"name": "3"
+							}
+						},
+						{
+							"name": "name",
+							"dataSource": "This:C1470.name",
+							"width": 120,
+							"enterable": true,
+							"header": {
+								"text": "Name",
+								"name": "4"
+							},
+							"footer": {
+								"name": "5"
+							}
+						}
+					]
+				}
+			}
+		}
+	],
+	"geometryStamp": 1,
+	"method": "method.4dm",
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}
