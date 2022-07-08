@@ -48,6 +48,11 @@ Case of
 		$vo_dataObject:=ORDA_Get_Property_List  //Used by the query editor
 		$vt_docText:=JSON Stringify:C1217($vo_dataObject; *)
 		
+	: ($vt_List_Name="structure@")
+		$vo_dataObject:=REST_Get_Structure
+		$vt_docText:=JSON Stringify:C1217($vo_dataObject; *)
+		
+		
 		//: ($vt_List_Name="dashboard/stats") | ($vt_List_Name="/dashboard/stats@")
 		//$vo_dataObject:=REST_Get_Dashboard_Stats
 		//$vt_docText:=JSON Stringify($vo_dataObject; *)
@@ -73,6 +78,10 @@ Case of
 		
 	: ($vt_List_Name="navigateState@")
 		$vo_response:=REST_Get_Navigate_State
+		$vt_docText:=JSON Stringify:C1217($vo_response; *)
+		
+	: ($vt_List_Name="lookups@")
+		$vo_response:=REST_Get_Lookups
 		$vt_docText:=JSON Stringify:C1217($vo_response; *)
 		
 	Else 

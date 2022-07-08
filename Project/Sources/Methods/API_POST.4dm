@@ -47,6 +47,30 @@ If (vl_Error=0)
 			$vo_Response:=REST_Put_Generic($vo_Request; Table:C252(->[interface:8]))
 			$vt_htmlResponseCode:="200 OK"
 			
+		: ($vt_List_Name="lookupList@")
+			$vo_Response:=REST_Put_Generic($vo_Request; Table:C252(->[lookupList:12]))
+			$vt_htmlResponseCode:="200 OK"
+			
+		: ($vt_List_Name="changeMessage@")
+			$vo_Response:=REST_Put_Generic($vo_Request; Table:C252(->[changeMessage:6]))
+			$vt_htmlResponseCode:="200 OK"
+			
+		: ($vt_List_Name="change@")
+			$vo_Response:=REST_Put_Generic($vo_Request; Table:C252(->[change:5]))
+			$vt_htmlResponseCode:="200 OK"
+			
+		: ($vt_List_Name="ticketMessage@")
+			$vo_Response:=REST_Put_Generic($vo_Request; Table:C252(->[ticketMessage:3]))
+			$vt_htmlResponseCode:="200 OK"
+			
+		: ($vt_List_Name="ticket@")
+			$vo_Response:=REST_Put_Generic($vo_Request; Table:C252(->[ticket:2]))
+			$vt_htmlResponseCode:="200 OK"
+			
+		: ($vt_List_Name="lookupMapping@")
+			$vo_Response:=REST_Put_Generic($vo_Request; Table:C252(->[lookupMapping:17]))
+			$vt_htmlResponseCode:="200 OK"
+			
 		Else 
 			OB SET:C1220($vo_Response; "Error"; "Insert not actioned.  Endpoint not found: "+$vt_List_Name)
 	End case 

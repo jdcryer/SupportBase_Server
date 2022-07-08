@@ -16,8 +16,8 @@ C_REAL:C285($vr_IP)
 //$vt_IPToListen:="78.129.209.133"
 //WEB GET OPTION(Web IP address to listen;$vt_IPToListen)
 WEB STOP SERVER:C618
-//WEB SET OPTION(Web HSTS max age; 31536000)  //Make sure this is over 180 days
-WEB SET OPTION:C1210(Web HSTS enabled:K73:26; 0)
+WEB SET OPTION:C1210(Web HSTS max age:K73:27; 31536000)  //Make sure this is over 180 days
+WEB SET OPTION:C1210(Web HSTS enabled:K73:26; 1)
 //$vt_webRoot:=Get 4D folder(Database folder)+"WebFolder"+Folder separator
 //WEB SET ROOT FOLDER($vt_webRoot)
 //WEB SET HOME PAGE("dist/index.html")

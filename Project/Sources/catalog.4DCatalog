@@ -9,7 +9,7 @@
 		<field name="address" uuid="6441F7D5A704384AB97433F6EAAD79E9" type="21" blob_switch_size="2147483647" id="4"/>
 		<field name="detail" uuid="B0E6EBDDFBC36546865625C94193D633" type="21" blob_switch_size="2147483647" id="5"/>
 		<primary_key field_name="id" field_uuid="4E2FEED7D9AEA0499EF9B59A1466BB3F"/>
-		<table_extra output_form="Output">
+		<table_extra output_form="Output" input_form="Output">
 			<editor_table_info displayable_fields_count="7">
 				<color red="237" green="211" blue="181" alpha="255"/>
 				<coordinates left="18" top="46" width="163" height="190.33203125"/>
@@ -185,17 +185,36 @@
 		</table_extra>
 	</table>
 	<table name="changeMessage" uuid="3D864E608BF3A94BA7112DF82BF529D2" id="6" prevent_journaling="true">
-		<field name="id" uuid="6098127F992B684684310021B8E57894" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
-		<field name="fk_change" uuid="5525DF3EB5AAE74CB5B1978EFBB76415" type="10" store_as_UUID="true" id="2"/>
-		<field name="fk_user" uuid="8A1C0C4813CF3E4A902CF05E09D68813" type="10" store_as_UUID="true" id="3"/>
-		<field name="title" uuid="50945EA350D22C4D984DFEC40AABB1D8" type="10" limiting_length="255" id="4"/>
-		<field name="content" uuid="588CBE90E4942749A3AF7E483E369956" type="10" id="5"/>
-		<field name="type" uuid="C2B0097E8C8BB944B30CB138544606FC" type="10" limiting_length="255" id="6"/>
-		<field name="createdTS" uuid="960FA418CBDD8B4AA6A1D2972A459F5E" type="10" limiting_length="255" id="7"/>
-		<field name="detail" uuid="CB6743EBCF308A45BFB2279D9159C087" type="21" blob_switch_size="2147483647" id="8"/>
+		<field name="id" uuid="6098127F992B684684310021B8E57894" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="fk_change" uuid="5525DF3EB5AAE74CB5B1978EFBB76415" type="10" store_as_UUID="true" id="2">
+			<field_extra position="2"/>
+		</field>
+		<field name="fk_user" uuid="8A1C0C4813CF3E4A902CF05E09D68813" type="10" store_as_UUID="true" id="3">
+			<field_extra position="3"/>
+		</field>
+		<field name="title" uuid="50945EA350D22C4D984DFEC40AABB1D8" type="10" limiting_length="255" id="4">
+			<field_extra position="4"/>
+		</field>
+		<field name="content" uuid="588CBE90E4942749A3AF7E483E369956" type="10" id="5">
+			<field_extra position="5"/>
+		</field>
+		<field name="type" uuid="C2B0097E8C8BB944B30CB138544606FC" type="10" limiting_length="255" id="6">
+			<field_extra position="6"/>
+		</field>
+		<field name="createdTS" uuid="960FA418CBDD8B4AA6A1D2972A459F5E" type="10" limiting_length="255" id="7">
+			<field_extra position="7"/>
+		</field>
+		<field name="detail" uuid="CB6743EBCF308A45BFB2279D9159C087" type="21" blob_switch_size="2147483647" id="8">
+			<field_extra position="9"/>
+		</field>
+		<field name="editTS" uuid="EC67E05B520C5B4ABE82BCE0C64C17AA" type="10" limiting_length="255" id="9">
+			<field_extra position="8"/>
+		</field>
 		<primary_key field_name="id" field_uuid="6098127F992B684684310021B8E57894"/>
-		<table_extra>
-			<editor_table_info displayable_fields_count="9">
+		<table_extra trigger_update="true" trigger_insert="true">
+			<editor_table_info fields_ordering="2" displayable_fields_count="9">
 				<color red="168" green="206" blue="226" alpha="255"/>
 				<coordinates left="1402" top="517" width="174" height="246.33203125"/>
 			</editor_table_info>
@@ -214,7 +233,7 @@
 		<table_extra>
 			<editor_table_info displayable_fields_count="10">
 				<color red="181" green="223" blue="149" alpha="255"/>
-				<coordinates left="792" top="559" width="161" height="254.33203125"/>
+				<coordinates left="889" top="558" width="161" height="254.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -240,7 +259,7 @@
 		<table_extra>
 			<editor_table_info displayable_fields_count="8">
 				<color red="255" green="153" blue="63" alpha="255"/>
-				<coordinates left="590" top="688" width="140" height="217.33203125"/>
+				<coordinates left="733" top="687" width="140" height="217.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -296,15 +315,23 @@
 		</table_extra>
 	</table>
 	<table name="lookupList" uuid="BBD725C7C775BE448B7887414F1B5773" id="12" prevent_journaling="true">
-		<field name="id" uuid="3E5E68F560781D4D94E937D36792CBF5" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
-		<field name="fk_client" uuid="A09DF2DB87C6D34EAA14D5D5DCC402A4" type="10" store_as_UUID="true" id="2"/>
-		<field name="name" uuid="8D74735BC9EF3149B64A368E25E0F0B1" type="10" limiting_length="255" id="3"/>
-		<field name="detail" uuid="A49AEC512FEAA94D90F67FD296508BC1" type="21" blob_switch_size="2147483647" id="4"/>
+		<field name="id" uuid="3E5E68F560781D4D94E937D36792CBF5" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="fk_client" uuid="A09DF2DB87C6D34EAA14D5D5DCC402A4" type="10" store_as_UUID="true" id="2">
+			<field_extra position="2"/>
+		</field>
+		<field name="name" uuid="8D74735BC9EF3149B64A368E25E0F0B1" type="10" limiting_length="255" id="3">
+			<field_extra position="3"/>
+		</field>
+		<field name="detail" uuid="A49AEC512FEAA94D90F67FD296508BC1" type="21" blob_switch_size="2147483647" id="4">
+			<field_extra position="5"/>
+		</field>
 		<primary_key field_name="id" field_uuid="3E5E68F560781D4D94E937D36792CBF5"/>
 		<table_extra>
-			<editor_table_info displayable_fields_count="7">
+			<editor_table_info fields_ordering="2" displayable_fields_count="7">
 				<color red="255" green="153" blue="63" alpha="255"/>
-				<coordinates left="421" top="693" width="148" height="189.33203125"/>
+				<coordinates left="375" top="766" width="148" height="189.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -370,6 +397,19 @@
 			<editor_table_info displayable_fields_count="6">
 				<color red="255" green="255" blue="255" alpha="0"/>
 				<coordinates left="5" top="471" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="lookupMapping" uuid="5ACC4E206688B14291FA425991308ED2" id="17" prevent_journaling="true">
+		<field name="id" uuid="1753C52EDE590C458AF429B03185DC89" type="10" unique="true" autogenerate="true" store_as_UUID="true" not_null="true" id="1"/>
+		<field name="fk_lookupList" uuid="6BFD1641929E6A4AA0C547062C01CF5D" type="10" store_as_UUID="true" id="2"/>
+		<field name="tableNum" uuid="27742B249CE78E4E887B865A03720C77" type="4" id="3"/>
+		<field name="fieldNum" uuid="97482F2A7CA1144BA1B890A1A073369E" type="4" id="4"/>
+		<primary_key field_name="id" field_uuid="1753C52EDE590C458AF429B03185DC89"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="9">
+				<color red="255" green="153" blue="63" alpha="255"/>
+				<coordinates left="559" top="775" width="144" height="243.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -662,9 +702,31 @@
 			</editor_relation_info>
 		</relation_extra>
 	</relation>
+	<relation uuid="517569A819B96B4FAA3F492F43522585" name_Nto1="lookupMapping_lookupList" name_1toN="lookupList_lookupMapping" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="6BFD1641929E6A4AA0C547062C01CF5D" name="fk_lookupList">
+				<table_ref uuid="5ACC4E206688B14291FA425991308ED2" name="lookupMapping"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="3E5E68F560781D4D94E937D36792CBF5" name="id">
+				<table_ref uuid="BBD725C7C775BE448B7887414F1B5773" name="lookupList"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="240" green="240" blue="240" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
 	<index kind="regular" unique_keys="true" uuid="044E6573859AEC4B9DDE2F36883F49E5" type="7">
 		<field_ref uuid="9CDF49EE6742884384F44DBCBA94E058" name="id">
 			<table_ref uuid="9374181ADF3BF048B6007664E8E8D732" name="interface"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="05A22B5E4084994099A9EB4687F8A91C" type="7">
+		<field_ref uuid="1753C52EDE590C458AF429B03185DC89" name="id">
+			<table_ref uuid="5ACC4E206688B14291FA425991308ED2" name="lookupMapping"/>
 		</field_ref>
 	</index>
 	<index kind="regular" uuid="0B8834B57CA72D48820CDE96DD7EF488" type="7">
@@ -830,6 +892,11 @@
 	<index kind="regular" unique_keys="true" uuid="CD07C2EE29DCE6458EE2FE4A31F97014" type="7">
 		<field_ref uuid="26A1561FCD1A244EB3AFB5C723DDC23A" name="id">
 			<table_ref uuid="C0B2CDE8D5C213419EFC043373F23438" name="ticket"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="D311AAE4AD3CA14AB24ECAC277DFBFE3" type="7">
+		<field_ref uuid="6BFD1641929E6A4AA0C547062C01CF5D" name="fk_lookupList">
+			<table_ref uuid="5ACC4E206688B14291FA425991308ED2" name="lookupMapping"/>
 		</field_ref>
 	</index>
 	<index kind="regular" uuid="DE5F0191904C294E83481E7167A09F40" type="7">
